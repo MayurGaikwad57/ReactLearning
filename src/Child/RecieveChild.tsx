@@ -1,19 +1,21 @@
-import { useState } from "react"
+import { useState } from "react";
 
-const ReciveChild = (props) => {
-    const [value,setValue] = useState("")
+const ReceiveChild = (props) => {
+  const [userName, updateName] = useState(" ");
 
-    const updateName = (name) => {
-        setValue(name)
-    }
-    
-return (
+  const getName = (name: any) => {
+    updateName(name);
+  };
+
+  return (
     <div>
-        <input type="text" onChange={(e)=>updateName(e.target.value)} />
-      <button onClick={()=>props.onUpdateName(value)} >update</button>
-      <button onClick={()=>props.onResetUser("")} >Reset</button>
+      <input type="text" onChange={(e: any) => getName(e.target.value)} />
+      <button onClick={() => props.onUpdateUserName(userName)}>
+        Update Name
+      </button>
+      <p>{props.userClass}</p>
     </div>
-)
-}
+  );
+};
 
-export default ReciveChild
+export default ReceiveChild;
