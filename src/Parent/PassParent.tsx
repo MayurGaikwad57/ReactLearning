@@ -1,23 +1,18 @@
-import { useState } from "react"
-import ReciveChild from "../Child/RecieveChild"
+import { useState } from "react";
+import ReceiveChild from "../Child/RecieveChild";
 
- const PassParent = () => {
-   const [userName,setUserName] = useState("Mayur")
-  const updateUserName = (name:any) => {
-       setUserName(name)
-   }
-   const resetUser = (name:any) => {
-    setUserName(name)
-   }
-   return (
-   <div>
-   <ReciveChild
-    onUpdateName = {updateUserName}
-    onResetUser = {resetUser}
-   />
-   <h1>Name is : {userName}</h1>
-   </div>
-   )
-}
+const ParentPass = () => {
+  const [name, setName] = useState("Mayur");
+  const [age] = useState("NIce CLass");
+  const updateName = (userTypedName: any) => {
+    setName(userTypedName);
+  };
+  return (
+    <div>
+      <h1>Username is : {name}</h1>
+      <ReceiveChild userClass={age} onUpdateUserName={updateName} />
+    </div>
+  );
+};
 
-export default PassParent
+export default ParentPass;

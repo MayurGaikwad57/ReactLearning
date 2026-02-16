@@ -1,17 +1,11 @@
-
-
 // import PracticeExample from "./useStateExample/StateExample"
 
-import ParentData from "./Parent/PassParent"
-
-
+import PassParent from "./Parent/PassParent";
 
 // import IntervalSet from "./useStateExample/setInterval"
 
 const App = () => {
-  return (
-    <ParentData/>
-  )
-}
+  return <PassParent />;
+};
 
-export default App
+export default App;
